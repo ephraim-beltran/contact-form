@@ -1,0 +1,27 @@
+#contact-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block {
+    display: flex;
+    flex-direction: column;
+}
+.wide {
+    flex-basis: 100%;
+}
+.split {
+    flex-basis: 50%;
+}
+#contact-form button {
+    text-align: center;
+}
+.required-input::after {
+    content: "*";
+}
+#contact-form > *:has(> label > input[type="radio"]) {
+    display: flex;
+    flex-wrap: wrap;
+}
+.invalid-input .error-message {
+    color: red;
+}
