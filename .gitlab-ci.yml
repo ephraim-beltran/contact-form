@@ -1,13 +1,26 @@
 stages:
+  - build
   - deploy
+cache:
+  paths:
+    - node_modules
+    - dist
+    
+before_script:
+  - npm ci
+
+build_dependencies:
+  tags:
+    - node
+  stage: build
+  script:
+    - npm run build
 
 pages:
   tags:
     - node
   stage: deploy
   script:
-    - npm install
-    - npm run build
     - rm -rf public
     - cp dist/index.html dist/404.html
     - mv dist public
