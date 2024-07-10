@@ -3,9 +3,9 @@ stages:
   - deploy
 cache:
   paths:
-    - node_modules
-    - dist
-    
+    - node_modules/
+    - dist/
+
 before_script:
   - npm ci
 
