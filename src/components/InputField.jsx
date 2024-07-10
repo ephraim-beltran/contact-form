@@ -42,7 +42,7 @@ export default function InputField({
             {label}
             <RequiredMarker />
           </span>
-          <input type="text" name={name} required={true} />
+          <input type="email" name={name} required={true} />
           {message[name]}
         </label>
       );
