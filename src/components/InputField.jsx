@@ -60,6 +60,7 @@ export default function InputField({
                 key={option.value}
                 text={option.text}
                 value={option.value}
+                name={name}
               />
             );
           })}
