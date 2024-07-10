@@ -2,26 +2,21 @@
     display: flex;
     flex-wrap: wrap;
 }
-.block {
+#contact-form .block {
     display: flex;
     flex-direction: column;
 }
-.wide {
+#contact-form .wide {
     flex-basis: 100%;
 }
-.split {
+#contact-form .split {
     flex-basis: 50%;
 }
 #contact-form button {
     text-align: center;
 }
-.required-input::after {
-    content: "*";
-}
+
 #contact-form > *:has(> label > input[type="radio"]) {
     display: flex;
     flex-wrap: wrap;
-}
-.invalid-input .error-message {
-    color: red;
 }
