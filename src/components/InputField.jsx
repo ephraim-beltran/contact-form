@@ -1,111 +1,49 @@
-import PropTypes from "prop-types";
-
+import styled from "./InputField.module.css";
+import PropTypes from 'prop-types';
 function RequiredMarker() {
-  return <span style={{ marginLeft: 5 }}>*</span>;
+    return <span className={styled.label}>*</span>
 }
-function RadioButton({ text, value, name }) {
-  return (
-    <label style={{flexBasis: '50%'}}>
-      <input type="radio" name={name} value={value} required={true} />
-      <span>{text}</span>
+function InputField({ errorMessage }) {
+    
+    return (
+    <>
+    <label>
+        <span className={styled.label}>First Name<RequiredMarker/></span>
+        <input type="text" name="firstname" required={true} />
+        {errorMessage.firstname}
     </label>
-  );
-}
-export default function InputField({
-  inputType,
-  inputStyle,
-  label,
-  name,
-  message,
-  options,
-}) {
-  let inputField;
-
-  switch (inputType) {
-    case "name":
-      inputField = (
-        <label className={inputStyle}>
-          <span>
-            {label}
-            <RequiredMarker />
-          </span>
-          <input type="text" name={name} required={true} />
-          {message[name]}
+    <label>
+        <span className={styled.label}>Last Name<RequiredMarker/></span>
+        <input type="text" name="lastname" required={true} />
+        {errorMessage.lastname}
+    </label>
+    <label>
+        <span className={styled.label}>Email Address<RequiredMarker/></span>
+        <input type="email" name="email" required={true} />
+        {errorMessage.email}
+    </label>
+    <fieldset>
+        <span>Query Type<RequiredMarker/></span>
+        <label>
+            <input type="radio" name="queryType" value="general-inquiry" required />
+            <span>General Inquiry</span>
         </label>
-      );
-      break;
-
-    case "email":
-      inputField = (
-        <label className={inputStyle}>
-          <span>
-            {label}
-            <RequiredMarker />
-          </span>
-          <input type="email" name={name} required={true} />
-          {message[name]}
+        <label>
+            <input type="radio" name="queryType" value="support-request" required />
+            <span>Support Request</span>
         </label>
-      );
-      break;
-
-    case "selectionExclusive":
-      inputField = (
-        <fieldset style={{flexBasis: '100%'}}>
-          <span className="wide">
-            {label} <RequiredMarker />
-          </span>
-          {options.map((option) => {
-            return (
-              <RadioButton
-                key={option.value}
-                text={option.text}
-                value={option.value}
-                name={name}
-              />
-            );
-          })}
-          {message[name]}
-        </fieldset>
-      );
-      break;
-
-    case "textbox":
-      inputField = (
-        <label className={inputStyle}>
-          <span>{label}<RequiredMarker /></span>
-          <textarea name={name} required={true}></textarea>
-          {message[name]}
-        </label>
-      );
-      break;
-
-    case "acknowledgement":
-      inputField = (
-        <label className={inputStyle}>
-        <input type="checkbox" name={name} required={true} />
-        <span>
-          {label} <RequiredMarker />
-        </span>
-        {message[name]}
-      </label>
-      )
-      break;
-
-    default:
-      break;
-  }
-  return inputField;
+        {errorMessage.queryType}
+    </fieldset>
+    <label>
+        <span>Message<RequiredMarker /></span>
+        <textarea name="message" required></textarea>
+        {errorMessage.message}
+    </label>
+    </>
+    )
 }
-RadioButton.propTypes = {
-  text: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
-}
+
 InputField.propTypes = {
-  inputType: PropTypes.string.isRequired,
-  inputStyle: PropTypes.string,
-  label: PropTypes.string,
-  name: PropTypes.string,
-  message: PropTypes.object,
-  options: PropTypes.array,
+    errorMessage: PropTypes.object,
 }
+export default InputField;
