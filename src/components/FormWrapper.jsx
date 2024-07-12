@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import styled from "./FormWrapper.module.css";
 
 function FormWrapper(props) {
   const setMessage = (inputName, message) => {
     props.setErrorMessage((currentMessages) => ({
       ...currentMessages,
-      [inputName]: <span>{message}</span>,
+      [inputName]: message,
     }));
   };
   const validate = (target) => {
@@ -58,9 +58,8 @@ function FormWrapper(props) {
 }
 
 FormWrapper.propTypes = {
-    handleSubmit: PropTypes.func,
-    children: PropTypes.node,
-    setErrorMessage: PropTypes.func,
-
-}
+  handleSubmit: PropTypes.func,
+  children: PropTypes.node,
+  setErrorMessage: PropTypes.func,
+};
 export default FormWrapper;
