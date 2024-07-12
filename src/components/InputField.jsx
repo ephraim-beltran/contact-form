@@ -22,11 +22,11 @@ function InputField({ errorMessage }) {
         <input type="email" name="email" required={true} />
         <span>{errorMessage.email}</span>
     </label>
-    <fieldset className={styled.entry}>
+    <fieldset className={`${styled.entry} ${styled.selection}`}>
         <span>Query Type<RequiredMarker/></span>
         <label>
             <input type="radio" name="queryType" value="general-inquiry" required />
-            <span>General Inquiry</span>
+            <span>General Enquiry</span>
         </label>
         <label>
             <input type="radio" name="queryType" value="support-request" required />
