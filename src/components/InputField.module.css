@@ -5,5 +5,68 @@
 .entry {
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
+    row-gap: 11px;
+}
+.entry > textarea,
+.entry > input {
+    border-radius: 10px;
+    height: 50px;
+    border: 1px solid var(--grey500);
+    padding-inline: 1.5em;
+}
+.selection input[type="radio"]:is(:active, :hover),
+.entry > textarea:is(:hover, :focus-visible, :focus-within),
+.entry >  input:is(:hover, :focus-visible, :focus-within) {
+    outline: 1px solid var(--green600);
+    cursor: pointer;
+}
+
+.selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: inherit;
+    row-gap: inherit;
+}
+.selection > span {
+    grid-column: 1 / span 2;
+}
+.selection > label {
+    border-radius: 10px;
+    border: 1px solid var(--grey500);
+    height: 3.3em;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+}
+.selection input[type="radio"] {
+    aspect-ratio: 1;
+    width: 16px;
+    height: auto;
+    appearance: none;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 1px var(--grey500);
+    border-radius: 50%;
+    margin-left: 2em;
+    margin-right: 1em;
+}
+
+.selection input[type="radio"]:is(:checked, :active) {
+    background-color: var(--green600);
+}
+.selection > label:has(input[type="radio"]):is(:hover, :focus-visible, :focus-within),
+.selection > label:has(input[type="radio"]:is(:active, :checked)):hover {
+    outline: 1px solid var(--green600);
+    background-color: var(--green200);
+}
+.entry > textarea {
+    box-sizing: content-box;
+    min-height: 4em;
+    padding-block: 0.5em;
+    resize: none;
+
+    font-family: inherit;
+    line-height: 1.3em;
+}
+.error {
+    color: var(--red);
 }
