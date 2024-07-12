@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import styled from "./FormWrapper.module.css";
 
 function FormWrapper(props) {
   const setMessage = (inputName, message) => {
@@ -50,6 +50,7 @@ function FormWrapper(props) {
       onSubmit={props.handleSubmit}
       onInvalidCapture={handleInvalid}
       onChangeCapture={handleChange}
+      className={styled.form}
     >
       {props.children}
     </form>

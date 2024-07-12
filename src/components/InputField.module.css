@@ -1,0 +1,9 @@
+.wide {
+    grid-column: 1 / span 2;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}

@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    background-color: hsl(148, 38%, 91%);
+    height: 100vh;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormWrapper from "./components/FormWrapper";
 import InputField from "./components/InputField";
+import "./index.css"; // Presentation only
 
 function ContactForm() {
   const [errorMessage, setErrorMessage] = useState({});
@@ -18,7 +19,7 @@ function ContactForm() {
 
       <InputField errorMessage={errorMessage} />
       
-      <button className="wide" type="submit" value="submit">
+      <button type="submit" value="submit">
         Submit
       </button>
     </FormWrapper>

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+.form {
+    --green200: hsl(148, 38%, 91%);
+    --green600: hsl(169, 82%, 27%);
+    --white: hsl(0, 0%, 100%);
+    --grey500: hsl(186, 15%, 59%);
+    --grey800: hsl(187, 24%, 22%);
+
+    max-width: 736px;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: var(--white);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+/* Reset defaults */
+.form > * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.form > :is(h2, button, fieldset) {
+    grid-column: 1 / span 2;
+}
+
+.form > h2 {
+    font-size: 2em;
+    font-weight: 700;
+}
+.form > button {
+    padding-block: 20px;
+    background-color: var(--green600);
+    border: none;
+    border-radius: 10px;
+}
