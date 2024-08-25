@@ -1,9 +1,18 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(148, 38%, 91%);
+  min-height: 0;
 }
 
 #root {
-    background-color: hsl(148, 38%, 91%);
-    min-height: 100dvh;
+  min-height: 100dvh;
+  /* display: flex; */
+  flex-direction: column;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
 }
