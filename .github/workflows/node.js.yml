@@ -22,11 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build React app
-        run: |
-          npm run build
-          mv dist .dist
-          rm -rf *
-          mv .dist/* .
+        run: npm run build
 
       - name: Setup Github Pages
         uses: actions/configure-pages@v5
@@ -34,8 +30,11 @@ jobs:
       - name: Upload to Github Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "./dist"
 
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{secrets.GH_PAGES_TOKEN}
+          publish_dir: "./dist"
