@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <ContactForm />
+      <main>
+        <ContactForm />
+      </main>
       <Footer />
     </>
   );
